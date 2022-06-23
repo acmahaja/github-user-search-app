@@ -1,12 +1,40 @@
-:root {
-    --blue: 0, 121, 255;
-    --grey-slate: 105, 124, 154;
-    --slate: 75, 106, 155;
-    --dark-slate: 43, 52, 66;
-    --gray: 246, 248, 255;
-    --light-white: 254, 254, 254;
+.App.light {
+  background-color: rgb(var(--gray));
 }
 
-.App.light {
-    background-color: rgb(var(--gray));
+
+.light nav h1 {
+    color: rgb(34, 39, 49) ;
+  margin: 0px;
+}
+
+.light #themeToggle {
+  color: rgb(var(--white));
+}
+
+.light #themeToggle h4 {
+  margin-right: 1rem;
+  font-weight: 700;
+  color: rgb(var(--grey-slate));
+}
+
+.light #themeToggle button {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: none;
+  border: none;
+  background-color: rgb(var(--grey-slate));
+  -webkit-mask-image: url("../assets/icon-sun.svg");
+  mask-image: url("../assets/icon-sun.svg");
+}
+
+.light #themeToggle.hover {
+  cursor: pointer;
+}
+
+.light #themeToggle.hover h4 {
+  color: rgb(34, 39, 49);
+}
+.light #themeToggle.hover button {
+  background-color: rgb(34, 39, 49);
 }

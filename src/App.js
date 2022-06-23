@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./css/main.css";
-import "./css/dark.css";
 import "./css/light.css";
+import "./css/dark.css";
 
 import {Navbar} from "./components/navbar"
 
@@ -20,7 +20,8 @@ const App = () => {
     setUserData(data);
   }
 
-  const updateTheme = (newTheme) => {
+  const updateTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     localStorage.setItem("theme", theme);
     console.log(newTheme);
@@ -30,7 +31,7 @@ const App = () => {
 
   return (
     <div className={`useBorderBox App ${theme}`}>
-      <Navbar />
+      <Navbar theme={theme ==='dark' ? 'light' : 'dark'} setTheme={updateTheme}/>
     </div>
   );
 };
