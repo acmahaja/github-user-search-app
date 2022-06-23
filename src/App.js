@@ -12,7 +12,7 @@ const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
   useEffect(() => {
-    setTheme(theme);
+    localStorage.setItem("theme", theme);
   });
 
   async function getData() {
@@ -23,8 +23,6 @@ const App = () => {
   const updateTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    localStorage.setItem("theme", theme);
-    console.log(newTheme);
   };
 
   // updateTheme('dark')

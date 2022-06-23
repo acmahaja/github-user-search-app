@@ -89,3 +89,20 @@ p {
   font-size: 15px;
   line-height: 25px;
 }
+
+
+@media screen and (min-width: 768px) {
+  .App {
+      /* padding: 0rem 6.0625rem; */
+      padding: 8.75rem 6.0625rem 0rem 6.0625rem;
+
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  .App {
+      padding: 9rem 22.1875rem 0rem 22.1875rem;
+
+  }
+}

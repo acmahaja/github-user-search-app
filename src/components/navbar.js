@@ -4,7 +4,6 @@ import "../css/navbar.css";
 export const Navbar = ({ theme , setTheme}) => {
   const [isHovering, setHovering] = useState(false);
   const toggleHovering = () => {
-    console.log("asd");
     setHovering(!isHovering);
   };
 
