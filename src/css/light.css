@@ -19,8 +19,8 @@
 
 .light #themeToggle button {
   background-color: rgb(var(--grey-slate));
-  -webkit-mask-image: url("../assets/icon-sun.svg");
-  mask-image: url("../assets/icon-sun.svg");
+  -webkit-mask-image: url("../assets/icon-moon.svg");
+  mask-image: url("../assets/icon-moon.svg");
 }
 
 .light #themeToggle.hover {
