@@ -5,6 +5,7 @@ import "./css/light.css";
 import "./css/dark.css";
 
 import {Navbar} from "./components/navbar"
+import {Search} from "./components/search";
 
 const App = () => {
   const [user, setUser] = useState("github");
@@ -25,11 +26,16 @@ const App = () => {
     setTheme(newTheme);
   };
 
+  const updateUser = (serachUser) => {
+    setUserData(serachUser)
+  }
+
   // updateTheme('dark')
 
   return (
     <div className={`useBorderBox App ${theme}`}>
       <Navbar theme={theme ==='dark' ? 'light' : 'dark'} setTheme={updateTheme}/>
+      <Search setUserSearch={updateUser}/>
     </div>
   );
 };

@@ -2,6 +2,8 @@ nav {
   width: 100%;
   height: fit-content;
 
+  margin-bottom: 2.25rem;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,5 +19,20 @@ nav {
 
 #themeToggle h4 {
   text-transform: uppercase;
+  margin: 0rem;
+  margin-right: 1rem;
+
 }
 
+#themeToggle button {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: none;
+  border: none;
+}
+
+#themeToggle.hover {
+  animation-name: hoverExand;
+  animation-duration: 1s;
+
+}
