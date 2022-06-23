@@ -1,0 +1,12 @@
+:root {
+    --blue: 0, 121, 255;
+    --grey-slate: 105, 124, 154;
+    --slate: 75, 106, 155;
+    --dark-slate: 43, 52, 66;
+    --gray: 246, 248, 255;
+    --light-white: 254, 254, 254;
+}
+
+.App.light {
+    background-color: rgb(var(--gray));
+}

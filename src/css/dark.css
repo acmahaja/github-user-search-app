@@ -1,0 +1,10 @@
+:root {
+    --blue: 0, 121, 255;
+    --white: 255,255,255;
+    --dark-blue: 30, 42, 71;
+    --very-dark-blue: 20, 29, 47;
+}
+
+.App.dark {
+    background-color: rgb(var(--very-dark-blue));
+}
