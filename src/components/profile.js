@@ -67,11 +67,7 @@ export const Profile = ({ data }) => {
             }`}
           >
             <div alt="twitter icon" className="icon" id="twitter"></div>
-            <p>
-              {data.twitter_username === null
-                ? "Not Available"
-                : data.twitter_username}
-            </p>
+            <a href={data.twitter_username === null ? "#" : `https://www.twitter.com/${data.twitter_username}`} >{data.blog === null ? "Not Available" : data.twitter_username}</a>
           </div>
           <div className={`link ${data.company === null ? "disable" : null}`}>
             <div alt="company icon" className="icon" id="company"></div>
