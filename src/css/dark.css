@@ -61,6 +61,10 @@
   color: rgb(var(--white));
 }
 
+.dark main {
+  background-color:rgb(var(--dark-blue));
+}
+
 .dark article {
   background: rgb(var(--dark-blue));
 }
