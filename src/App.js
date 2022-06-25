@@ -6,62 +6,84 @@ import "./css/dark.css";
 
 import { Navbar } from "./components/navbar";
 import { Search } from "./components/search";
-import {Loader} from "./components/loader";
+import { Loader } from "./components/loader";
 
 const useSemiPersistantState = (key, initalState) => {
   const [value, setValue] = React.useState(
     localStorage.getItem(key) || initalState
-  )
+  );
 
   React.useEffect(() => {
     localStorage.setItem(key, value);
   }, [value, key]);
 
   return [value, setValue];
-
-}
+};
 
 const searchReducer = (state, action) => {
   switch (action.type) {
-    case 'START':
+    case "WAITING":
       return {
-        ...state,
+        data: null,
         isLoading: false,
         isError: false,
       };
-    case 'GETTING_DATA': 
+    case "GETTING_DATA":
       return {
         ...state,
         isLoading: true,
         isError: false,
-        data: {},
       };
-    case 'GETTING_DATA_SUCCESS':
+    case "GETTING_DATA_SUCCESS":
+
       return {
         ...state,
         isLoading: false,
         isError: false,
-        data: action.payload
-      }
-      case 'GETTING_DATA_ERROR':
-        return {
-          ...state,
-          isLoading: false,
-          isError: true
-        }
+        data: action.data,
+      };
+    case "GETTING_DATA_ERROR":
+      return {
+        ...state,
+        data: null,
+        isLoading: false,
+        isError: true,
+        error: action.error,
+      };
     default:
       throw new Error();
   }
-}
+};
 
 const App = () => {
   const [user, setUser] = useState("");
-  const [userData, setUserData] = useReducer(searchReducer, {})
-  const [theme, setTheme] = useSemiPersistantState('theme', 'dark');
+
+  const [userData, updateUserData] = useReducer(searchReducer, {
+    data: null,
+    isLoading: false,
+    isError: false,
+    error: null,
+  });
+  const [theme, setTheme] = useSemiPersistantState("theme", "dark");
 
   useEffect(() => {
-    // setUserData({type: 'START'});
+    if (userData.isLoading && !userData.isError) {
+      getUserData(user)
+        .then((result) =>
+          updateUserData({ type: "GETTING_DATA_SUCCESS", data: result })
+        )
+        .catch((e) => updateUserData({ type: "GETTING_DATA_ERROR", error: e }));
+    }
   });
+
+  const getUserData = async (user) => {
+    let response = null;
+    await axios
+      .get(`https://api.github.com/users/${user}`)
+      .then((result) => (response = result))
+      .catch((e) => updateUserData({ type: "GETTING_DATA_ERROR", error: e }));
+    return response;
+  };
 
   const updateTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -70,8 +92,9 @@ const App = () => {
 
   const updateUser = (serachUser) => {
     setUser(serachUser);
-    setUserData(null);
-    console.log(userData);
+    updateUserData({
+      type: "GETTING_DATA",
+    });
   };
 
   return (
@@ -81,8 +104,13 @@ const App = () => {
         setTheme={updateTheme}
       />
       <Search setUserSearch={updateUser} />
-
-      <Loader />
+      {userData.isLoading ? (
+        <Loader />
+      ) : userData.data !== null && !userData.isError ? (
+        JSON.stringify(userData.data)
+      ) : (
+        "noData"
+      )}
     </div>
   );
 };
