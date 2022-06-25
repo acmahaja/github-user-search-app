@@ -1,53 +1,86 @@
 .App.dark {
-    background-color: rgb(var(--very-dark-blue));
+  background-color: rgb(var(--very-dark-blue));
 }
 
 .dark nav h1 {
-    color: rgb(var(--white));
-    margin: 0px;
+  color: rgb(var(--white));
+  margin: 0px;
 }
 
 .dark #themeToggle {
-    color: rgb(var(--white)) ;
+  color: rgb(var(--white));
 }
 
 .dark #themeToggle h4 {
-    font-weight: 700;
-
+  font-weight: 700;
 }
 
 .dark #themeToggle button {
-
-    background-color: white;
-    -webkit-mask-image: url('../assets/icon-sun.svg');
-    mask-image: url('../assets/icon-sun.svg');
+  background-color: white;
+  -webkit-mask-image: url("../assets/icon-sun.svg");
+  mask-image: url("../assets/icon-sun.svg");
 }
 
 .dark #themeToggle.hover {
-    cursor:pointer;
+  cursor: pointer;
 }
 
 .dark #themeToggle.hover h4 {
-    color: rgb(var(--grey-slate));
+  color: rgb(var(--grey-slate));
 }
 .dark #themeToggle.hover button {
-    background-color: rgb(var(--grey-slate));
+  background-color: rgb(var(--grey-slate));
 }
 
-
 .dark #error {
-    background-color: rgb(var(--dark-blue));
+  background-color: rgb(var(--dark-blue));
 }
 
 .dark form {
-    background-color: rgb(var(--dark-blue));
-    box-shadow: none;
+  background-color: rgb(var(--dark-blue));
+  box-shadow: none;
 }
 
 .dark form input {
-    color: rgb(var(--white));
+  color: rgb(var(--white));
 }
 
 .dark form input::placeholder {
-    color: rgb(var(--white));
+  color: rgb(var(--white));
+}
+
+.dark #name h1 {
+  color: rgb(var(--white));
+}
+
+.dark #name h3 {
+  color: rgb(var(--blue));
+}
+
+.dark p#join {
+  color: rgb(var(--white));
+}
+
+.dark article {
+  background: rgb(var(--dark-blue));
+}
+
+.dark #bio {
+  color: rgb(var(--white));
+}
+
+.dark #stats {
+  background-color: rgb(var(--very-dark-blue));
+}
+
+.dark .stat {
+  color: rgb(var(--white));
+}
+
+.dark .link .icon {
+  background: rgb(var(--white));
+}
+
+.dark .link p {
+  color: rgb(var(--white));
 }

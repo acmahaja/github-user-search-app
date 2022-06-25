@@ -7,6 +7,7 @@ import "./css/dark.css";
 import { Navbar } from "./components/navbar";
 import { Search } from "./components/search";
 import { Loader } from "./components/loader";
+import { Profile } from "./components/profile";
 
 const useSemiPersistantState = (key, initalState) => {
   const [value, setValue] = React.useState(
@@ -35,7 +36,7 @@ const searchReducer = (state, action) => {
         isError: false,
       };
     case "GETTING_DATA_SUCCESS":
-
+      console.log(action.data);
       return {
         ...state,
         isLoading: false,
@@ -70,7 +71,7 @@ const App = () => {
     if (userData.isLoading && !userData.isError) {
       getUserData(user)
         .then((result) =>
-          updateUserData({ type: "GETTING_DATA_SUCCESS", data: result })
+          updateUserData({ type: "GETTING_DATA_SUCCESS", data: result.data })
         )
         .catch((e) => updateUserData({ type: "GETTING_DATA_ERROR", error: e }));
     }
@@ -107,10 +108,8 @@ const App = () => {
       {userData.isLoading ? (
         <Loader />
       ) : userData.data !== null && !userData.isError ? (
-        JSON.stringify(userData.data)
-      ) : (
-        "noData"
-      )}
+        <Profile data={userData.data} />
+      ) : null}
     </div>
   );
 };

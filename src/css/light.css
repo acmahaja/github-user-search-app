@@ -2,9 +2,8 @@
   background-color: rgb(var(--gray));
 }
 
-
 .light nav h1 {
-    color: rgb(34, 39, 49) ;
+  color: rgb(34, 39, 49);
   margin: 0px;
 }
 
@@ -40,7 +39,54 @@
 }
 
 .light form #error {
-  background: rgb(var(--light-white)) ;
+  background: rgb(var(--light-white));
+}
+
+.light main {
+  background-color: rgb(var(--white));
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.light article {
+  background: rgb(var(--white));
+}
+
+.light #name h1{
+  color: black;
+}
+
+.light #join{
+  color: rgb(var(--grey-slate));
+}
+
+.light #bio {
+  color: rgb(var(--grey-slate));
+}
+
+.light #stats {
+  background-color: rgb(var(--gray));
+}
+
+.light .stat {
+  color: rgb(var(--grey-slate));
+}
+
+.light .stat h2 {
+  color: rgb(var(--dark-slate));
+}
+
+.light .link .icon {
+  background: rgb(var(--white));
+}
+
+.light .link p {
+  color: rgb(var(--white));
 }
 
 
+.light .link .icon {
+  background: rgb(var(--slate));
+}
+.light .link p {
+  color: rgb(var(--slate));
+}
