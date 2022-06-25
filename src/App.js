@@ -36,7 +36,6 @@ const searchReducer = (state, action) => {
         isError: false,
       };
     case "GETTING_DATA_SUCCESS":
-      console.log(action.data);
       return {
         ...state,
         isLoading: false,
@@ -98,13 +97,17 @@ const App = () => {
     });
   };
 
+
   return (
     <div className={`useBorderBox App ${theme}`}>
       <Navbar
         theme={theme === "dark" ? "light" : "dark"}
         setTheme={updateTheme}
       />
-      <Search setUserSearch={updateUser} />
+      <Search
+        setUserSearch={updateUser}
+        error={userData.isError ? userData.error : null}
+      />
       {userData.isLoading ? (
         <Loader />
       ) : userData.data !== null && !userData.isError ? (

@@ -57,22 +57,36 @@ export const Profile = ({ data }) => {
             <div alt="location icon" className="icon" id="location"></div>
             <p>{data.location === null ? "Not Available" : data.location}</p>
           </div>
-          <div className={`link ${data.blog === null ? "disable" : null}`}>
+
+          <div className={`link ${data.blog === "" ? "disable" : null}`}>
             <div alt="blog icon" className="icon" id="blog"></div>
-            <a href={data.blog === null ? "#" : data.blog} >{data.blog === null ? "Not Available" : data.blog}</a>
+            <a href={data.blog === "" ? "#" : data.blog}>
+              {data.blog === "" ? "Not Available" : data.blog}
+            </a>
           </div>
+
           <div
             className={`link ${
               data.twitter_username === null ? "disable" : null
             }`}
           >
             <div alt="twitter icon" className="icon" id="twitter"></div>
-            <a href={data.twitter_username === null ? "#" : `https://www.twitter.com/${data.twitter_username}`} >{data.blog === null ? "Not Available" : data.twitter_username}</a>
+            <a
+              href={
+                data.twitter_username === null
+                  ? "#"
+                  : `https://www.twitter.com/${data.twitter_username}`
+              }
+            >
+              {data.twitter_username === null ? "Not Available" : data.twitter_username}
+            </a>
           </div>
+
           <div className={`link ${data.company === null ? "disable" : null}`}>
             <div alt="company icon" className="icon" id="company"></div>
             <p>{data.company === null ? "Not Available" : data.company}</p>
           </div>
+
         </section>
       </article>
     </main>
