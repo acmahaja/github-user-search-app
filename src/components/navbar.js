@@ -9,7 +9,7 @@ export const Navbar = ({ theme , setTheme}) => {
 
   return (
     <nav>
-      <h1 class="noselect">devfinder</h1>
+      <h1 className="noselect">devfinder</h1>
       <div
         id="themeToggle"
         className={`${isHovering ? "hover" : null}`}
