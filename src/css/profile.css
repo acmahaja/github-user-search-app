@@ -182,7 +182,8 @@ a {
 @media screen and (min-width: 768px) {
   main {
     width: 100%;
-    min-height: 30rem;
+    min-height: 22rem;
+    height: fit-content;
   }
 
   #profile img {
@@ -235,6 +236,7 @@ a {
   }
   .link {
     width: 50%;
+    margin-bottom: 1.1875rem;
   }
 }
 
