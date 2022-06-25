@@ -143,13 +143,16 @@ p#join {
 }
 
 .link.disable {
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.link p {
+.link p,
+a {
   margin: 0px;
-  margin-left: 1.20rem;
-  color: rgb(var(--white));
+  margin-left: 1.2rem;
+  width: 85%;
+  word-wrap: break-word;
+  text-decoration: none;
 }
 
 #location {
@@ -176,7 +179,64 @@ p#join {
   mask-repeat: no-repeat;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    width: 100%;
+    min-height: 30rem;
+  }
 
+  #profile img {
+    width: 7.3125rem;
+    height: 7.3125rem;
+  }
+
+  #name h1 {
+    font-size: 1.625rem;
+    line-height: 2.4375rem;
+  }
+  #name h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  #join {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  #bio {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  #stats {
+    justify-content: space-between;
+    padding: 0rem 2rem;
+    margin-bottom: 1.875rem;
+
+  }
+
+  #stats .stat {
+    text-align: left;
+  }
+
+  .stat p {
+    font-size: 13px;
+    margin: 0px;
+    margin-bottom: 1px;
+  }
+
+  .stat h2 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 0px;
+  }
+  #links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .link {
+    width: 50%;
+  }
+}
 
 @media screen and (min-width: 1440px) {
   main img#desktop {

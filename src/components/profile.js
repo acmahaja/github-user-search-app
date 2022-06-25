@@ -21,6 +21,8 @@ export const Profile = ({ data }) => {
       monthList[date.getMonth()]
     } ${date.getFullYear()}`;
   };
+  console.log(data);
+
   return (
     <main>
       <img src={data.avatar_url} alt="user-profile-pic" id="desktop" />
@@ -32,7 +34,7 @@ export const Profile = ({ data }) => {
               <h1>{data.name}</h1>
               <h3>@{data.login}</h3>
             </div>
-            <p id="join">{formatDate(data.created_at)}</p>
+            <p id="join">Joined {formatDate(data.created_at)}</p>
           </div>
         </section>
         <section id="bio">{data.bio}</section>
@@ -57,7 +59,7 @@ export const Profile = ({ data }) => {
           </div>
           <div className={`link ${data.blog === null ? "disable" : null}`}>
             <div alt="blog icon" className="icon" id="blog"></div>
-            <p>{data.blog === null ? "Not Available" : data.blog}</p>
+            <a href={data.blog === null ? "#" : data.blog} >{data.blog === null ? "Not Available" : data.blog}</a>
           </div>
           <div
             className={`link ${

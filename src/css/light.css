@@ -79,8 +79,8 @@
   background: rgb(var(--white));
 }
 
-.light .link p {
-  color: rgb(var(--white));
+.light .link a {
+  color: rgb(var(--slate));
 }
 
 

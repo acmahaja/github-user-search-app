@@ -81,6 +81,6 @@
   background: rgb(var(--white));
 }
 
-.dark .link p {
+.dark .link p,a {
   color: rgb(var(--white));
 }
