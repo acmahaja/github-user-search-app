@@ -9,6 +9,8 @@ form {
   align-items: center;
   border-radius: 1rem;
   padding: 0rem 7px 0px 1rem;
+
+  margin-bottom: 1rem;
 }
 
 form img {
@@ -71,6 +73,8 @@ form button:hover {
 @media screen and (min-width: 768px) {
   form {
     padding: 0rem 10px 0rem 2rem;
+    margin-bottom: 1.5rem;
+
   }
   form img {
     padding-right: 1.5rem;
