@@ -110,11 +110,3 @@ p {
 
   }
 }
-
-
-@media screen and (min-width: 1440px) {
-  .App {
-      padding: 9rem 22.1875rem 0rem 22.1875rem;
-
-  }
-}
