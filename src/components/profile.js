@@ -24,7 +24,7 @@ export const Profile = ({ data }) => {
   console.log(data);
 
   return (
-    <main>
+    <main className="useBorderBox">
       <img src={data.avatar_url} alt="user-profile-pic" id="desktop" />
       <article className="useBorderBox">
         <section id="profile">

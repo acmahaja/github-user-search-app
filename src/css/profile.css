@@ -140,6 +140,7 @@ p#join {
   background: rgb(var(--white));
   width: 1.25rem;
   height: 1.25rem;
+  margin-right: 0.75rem;
 }
 
 .link.disable {
@@ -149,7 +150,6 @@ p#join {
 .link p,
 a {
   margin: 0px;
-  margin-left: 1.2rem;
   width: 85%;
   word-wrap: break-word;
   text-decoration: none;
@@ -182,8 +182,11 @@ a {
 @media screen and (min-width: 768px) {
   main {
     width: 100%;
-    min-height: 22rem;
+    min-height: 25rem;
     height: fit-content;
+  }
+  article {
+    padding: 2.5rem 2.5rem 1rem 2.5rem;
   }
 
   #profile img {
@@ -212,7 +215,6 @@ a {
     justify-content: space-between;
     padding: 0rem 2rem;
     margin-bottom: 1.875rem;
-
   }
 
   #stats .stat {
@@ -235,16 +237,61 @@ a {
     flex-wrap: wrap;
   }
   .link {
-    width: 50%;
+    width: 48%;
     margin-bottom: 1.1875rem;
+  }
+
+  .link img {
+    width: 20px;
+    height: 20px;
+  }
+  .link p {
+    font-size: 15px;
+    line-height: 22px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  main {
+    width: 100%;
+    max-width: 730px;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3rem 3rem 1rem 3rem;
+
+  }
+
   main img#desktop {
     display: block;
+    width: 7.3125rem;
+    height: 7.3125rem;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 1.25rem;
   }
+
+  article {
+    padding: 0rem;
+  }
+
+  #profile {
+    margin-bottom: 1.25rem;
+  }
+
   #profile img {
     display: none;
+  }
+
+  #user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #bio {
+    margin-bottom: 2rem;
   }
 }
